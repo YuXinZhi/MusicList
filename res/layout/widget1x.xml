@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+<ImageView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/widget_bg"
+    android:layout_centerInParent="true"
+    android:id="@+id/widget1xbg"
+    />
+
+
+<ImageView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/widget_album_mask"
+    android:layout_centerVertical="true"
+    android:id="@+id/widget1xlogo"
+    android:layout_alignLeft="@+id/widget1xbg"
+    />
+
+
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="90sp"
+    android:layout_marginTop="2sp"
+    android:layout_marginRight="20sp"
+    android:id="@+id/ggregergrehtr"
+    android:layout_alignTop="@+id/widget1xbg"
+    >
+    <ImageView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/widget1xpre"
+    android:layout_centerVertical="true"
+    android:id="@+id/widget1xpre"
+    android:layout_marginRight="20sp"
+    android:layout_toLeftOf="@+id/widget1xplay"
+    />
+    <ImageView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/widget1xplay"
+    android:layout_centerInParent="true"
+    android:id="@+id/widget1xplay"
+    />
+    <ImageView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/widget1xnext"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="20sp"
+    android:id="@+id/widget1xnext"
+    android:layout_toRightOf="@+id/widget1xplay"
+    />
+    
+</RelativeLayout>
+    <TextView 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:text="点击开始播放歌曲"
+        android:layout_alignRight="@+id/ggregergrehtr"
+    android:layout_alignLeft="@+id/ggregergrehtr"
+    android:layout_below="@+id/ggregergrehtr"
+    android:singleLine="true"
+    android:id="@+id/widget1xname"
+        />
+    
+
+</RelativeLayout>

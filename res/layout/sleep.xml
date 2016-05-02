@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+>
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:text="请设置自动关闭时间(分钟)"
+    android:textSize="17sp"
+    android:textColor="#000000"
+    android:layout_centerHorizontal="true"
+    android:textStyle="bold"
+    />
+    <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sleeptextrela"
+            android:layout_marginTop="34sp"
+        >
+        
+        <ImageView 
+            
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pop_progress_bg" 
+            android:id="@+id/fsagshgdsrhrd"
+            />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:text="5"
+    android:layout_centerHorizontal="true"
+    android:textSize="22sp"
+    android:textColor="#000000"
+    android:layout_alignLeft="@+id/fsagshgdsrhrd"
+    android:layout_alignRight="@+id/fsagshgdsrhrd"
+    android:layout_marginTop="17sp"
+    android:id="@+id/sleeptext"
+    />
+
+</RelativeLayout>
+
+    <RelativeLayout 
+            android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:orientation="horizontal"
+             android:layout_alignBottom="@+id/sleeptextrela"
+             android:id="@+id/fsey6herht5sh"
+        >
+   <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="5"
+     android:layout_centerVertical="true"
+     android:textColor="#000000"
+     android:layout_marginLeft="10sp"
+    /> 
+    
+<SeekBar 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/sleepseekbar"
+     android:thumb="@drawable/sleepzhub" 
+     android:max="95"
+      android:paddingRight="30sp"
+      
+     android:paddingLeft="30sp"
+    android:progressDrawable="@drawable/seekbar_progress"  
+    />
+
+ <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="100"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:textColor="#000000"
+    android:layout_marginRight="1sp"
+    /> 
+</RelativeLayout>
+
+    
+<LinearLayout 
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_below="@+id/fsey6herht5sh"
+    android:gravity="center"
+    android:layout_marginTop="20sp"
+    >
+    <Button 
+               android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+        android:text="确    定"
+        android:background="@drawable/sleepok"
+         android:textSize="22sp"
+         android:id="@+id/sleepqueding"
+                 android:paddingLeft="30sp"
+        android:paddingRight="30sp"
+        />
+        <Button 
+               android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+        android:text="取    消"
+        android:paddingLeft="30sp"
+        android:id="@+id/sleepquxiao"
+        android:paddingRight="30sp"
+         android:textSize="22sp"
+         android:background="@drawable/sleepno"
+        />
+    
+</LinearLayout>
+</RelativeLayout>

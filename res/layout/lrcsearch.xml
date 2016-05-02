@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+    <TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="20sp"
+    android:layout_gravity="center_horizontal"
+    android:text="请将歌曲路劲改为歌词路劲\n确保歌词格式为.lrc\n歌词名称与歌曲名称相同\n默认歌词路劲与歌曲路劲相同"
+    />
+    <EditText 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lrcurledit"
+    />
+    <LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal"
+       >
+    <Button 
+    android:layout_width="120sp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="确   定"
+    android:textColor="#ffffff"
+    android:id="@+id/enterlrc"
+    android:background="@drawable/sleepok"
+    />
+   <Button 
+    android:layout_width="120sp"
+    android:layout_height="wrap_content"
+    android:text="取   消"
+    android:layout_marginLeft="7sp"
+    android:id="@+id/exitlrc"
+    android:textColor="#ffffff"
+    android:background="@drawable/sleepno"
+    />
+</LinearLayout>
+</LinearLayout>

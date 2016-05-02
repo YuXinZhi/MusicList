@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+	    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/widgetmainrela"
+>
+
+
+	    	      	          
+	    	      	          
+	   <!-- 总布局， -->      
+	    	      	           
+	 <RelativeLayout 
+	                android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/widgetlinw"
+	     
+	     >
+	          
+	     	<ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bg"
+                    android:id="@+id/widget_logo"
+                    android:layout_alignTop="@+id/topfangkuang"
+                    android:layout_alignLeft="@+id/widgetheiinage"
+                    android:layout_alignRight="@+id/widgetheiinage"
+                    android:layout_alignBottom="@+id/widgetheiinage"
+                    />
+		 
+		 
+		   <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/widgetheiinage"
+                    android:layout_alignTop="@+id/topfangkuang"
+                    android:alpha="0.6"
+                    android:background="@drawable/icon_panel_albumcicleconner"
+                    />
+		   
+		   
+		   
+		   
+		   
+		    
+	     
+	      <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/widgetbottom"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/buttomblack"
+                    />
+	     
+	     
+	      
+	      
+	      	      <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/widgetbottom"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/topblack"
+                    android:layout_above="@+id/relat5ivebot5t5om"
+                    />
+	      	      
+	      	      
+	      	      
+	     <RelativeLayout 
+	        android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/relat5ivebot5t5om"
+            android:id="@+id/topfangkuang"
+	        >
+	         <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/icon_panel_album_foreground"
+                    />
+	     </RelativeLayout>
+	      
+	      
+	     
+	     
+	      
+	      <RelativeLayout
+	    	      	             android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"  
+                                 android:id="@+id/relat5ivebot5t5om"
+                                 android:layout_above="@+id/buttomblack"
+	    	      	             >
+	      <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/widget_xiangxi"
+                    android:background="@drawable/icon_panel_footer_bg"
+                    />
+                 <!-- 上一首 -->
+	      <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/widget_pre"
+                    android:id="@+id/widget_frontBtn"
+                    android:layout_marginRight="37sp"
+                    android:layout_toLeftOf="@+id/widget_startBtn2"
+                    />
+	      
+	       <!-- 播放 -->
+	      	      <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/widget_startBtn2"
+                    android:src="@drawable/widget_play"
+                    />
+	      	      
+	      	      <!-- 下一曲 -->
+	    	      	           	      	      <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/widget_next"
+                    android:layout_marginLeft="37sp"
+                    android:id="@+id/widget_nextBtn"
+                    android:layout_toRightOf="@+id/widget_startBtn2"
+                    />
+	    	      	           	      	      
+	    	      	           	      	      
+	  </RelativeLayout>
+	  
+	      	      
+	      
+	      <RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_alignLeft="@+id/topfangkuang"
+	    android:id="@+id/singernam"
+	    android:layout_marginLeft="5sp"
+	    android:layout_marginRight="5sp"
+        android:layout_alignRight="@+id/topfangkuang"
+	    android:layout_alignTop="@+id/topfangkuang"
+ >
+                    
+	                <TextView
+		            android:layout_height="wrap_content"
+		            android:layout_width="wrap_content" 
+		            android:textSize="14sp"
+		            android:textStyle="bold"
+		            android:text="点击播放按钮开始播放"
+		            android:textColor="#e2e1e1"
+		            android:id="@+id/widgettitlemain"
+		            android:layout_centerHorizontal="true"
+	               	android:singleLine="true"
+                    android:marqueeRepeatLimit="marquee_forever" 
+                    android:layout_marginTop="4sp"
+                    android:focusableInTouchMode="true" 
+                    android:scrollHorizontally="true"
+                    android:ellipsize="marquee" 
+                    android:focusable="true" 
+		    />
+	          
+	          <TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:text="歌手"
+		    android:textColor="#969696"
+		    android:id="@+id/widgetsinger"
+		    android:textStyle="bold"
+		    android:layout_centerHorizontal="true"
+	     	android:singleLine="true"
+              android:marqueeRepeatLimit="marquee_forever" 
+              android:layout_below="@+id/widgettitlemain"
+                android:focusableInTouchMode="true" 
+                android:scrollHorizontally="true"
+                android:ellipsize="marquee" 
+                android:focusable="true" 
+		    />
+
+	          
+	          
+	          
+	    	  </RelativeLayout>
+	    	  
+	      
+	      
+	      
+	      <RelativeLayout 
+	        android:layout_height="match_parent"
+		    android:layout_width="match_parent" 
+		    android:layout_centerHorizontal="true"
+	        android:layout_alignTop="@+id/topblack"
+	        android:layout_alignBottom="@+id/buttomblack"
+	          
+	          >
+	       <!-- 圆环背景 -->    	           	      	       <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/icon_panel_progress_bgw"
+        />
+     
+      <!--左边半圆 -->   	           	      	       <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/icon_panel_progress_barleft"
+        android:src="@drawable/icon_panel_progress_barleft"
+        />
+     
+     <!--左边黑园 -->    	           	      	       <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/icon_panel_progress_bg2"
+        android:src="@drawable/icon_panel_progress_bg2"
+        />
+                <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:id="@+id/leftyuanquan"
+        android:layout_centerInParent="true"
+        android:src="@drawable/icon_panel_progress_barright"
+        />
+        
+             
+       <!-- 小点 -->
+              <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/thumb2"
+        android:layout_centerInParent="true"
+        android:src="@drawable/icon_panel_progress_thumb2"
+        />
+	          
+	          
+	      </RelativeLayout>
+	      
+	      
+	      
+	      <LinearLayout 
+		      android:layout_width="match_parent"
+              android:layout_height="match_parent"  
+		      android:orientation="vertical"
+              android:layout_alignLeft="@+id/widgetheiinage"
+              android:layout_alignRight="@+id/widgetheiinage" 
+	          android:layout_below="@+id/singernam"
+		      android:gravity="center"
+		      android:layout_alignBottom="@+id/topfangkuang"
+		      >
+	          <TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:textStyle="bold"
+		    android:id="@+id/lyric0"
+		    android:alpha="0.7"
+		    android:textColor="#b1b1b1"
+	     	android:singleLine="true"
+	     	
+		    /><TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:layout_marginTop="4sp"
+		    android:textStyle="bold"
+		    android:id="@+id/lyric1"
+		    android:alpha="0.7"
+		    android:textColor="#b1b1b1"
+	     	android:singleLine="true"
+	     	
+		    />
+			          <TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:layout_marginTop="4sp"
+		    android:textColor="#b1b1b1"
+		    android:textStyle="bold"
+		    android:alpha="0.7"
+	     	android:singleLine="true"
+	     	android:id="@+id/lyric2"
+		    />      
+		    
+			          
+			          <RelativeLayout 
+			              
+			          android:layout_height="wrap_content"
+		    android:layout_width="wrap_content"     
+		    android:layout_marginTop="4sp" 
+			              >
+			              <TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:textColor="#ff6a06"
+	     	android:singleLine="true"
+	     	android:textStyle="bold"
+	     	android:id="@+id/lyric33"
+		    />
+		       <TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:textColor="#e4e4e4"
+	     	android:singleLine="true"
+	     	android:alpha="0.7"
+	     	android:textStyle="bold"
+	     	android:id="@+id/lyric3"
+	     	
+		    />
+		       
+		       </RelativeLayout>
+		       <TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:id="@+id/lyric4"
+		    android:alpha="0.7"
+		    android:textStyle="bold"
+		    android:textColor="#b1b1b1"
+	     	android:singleLine="true"
+	     	android:layout_marginTop="4sp"
+		    /><TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:textStyle="bold"
+		    android:textColor="#b1b1b1"
+		    android:id="@+id/lyric5"
+		    android:alpha="0.7"
+	     	android:singleLine="true"
+	     	android:layout_marginTop="4sp"
+		    /><TextView
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content" 
+		    android:textSize="13sp"
+		    android:textStyle="bold"
+		    android:textColor="#b1b1b1"
+		    android:id="@+id/lyric6"
+	     	android:singleLine="true"
+	     	android:alpha="0.7"
+	     	android:layout_marginTop="4sp"
+		    />
+		      
+		      
+		  </LinearLayout>
+		  
+	      
+	    	  
+	      
+	     
+	 </RelativeLayout> 	      	           
+	    	      	     
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 <!-- 圆形进度条 -->
+
+	 
+	 
+	 
+	 
+	 
+	 <!-- 歌词 -->
+	    	      	           
+	    
+	    	      	           
+	    	      	           
+	    	      	           
+	    	      	           
+	    	      	           
+	    	      	           
+	    	      	           
+	    	      	           
+	    	      	           
+	    	      	           
+
+</RelativeLayout>
