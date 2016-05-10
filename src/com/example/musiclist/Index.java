@@ -67,11 +67,10 @@ public class Index extends ActivityGroup {
 	ViewPager viewPager;
 	ScreenInfo s;
 	private ArrayList<View> pageViews;
-	int aaa;
 	Button textmusic, textsinger, textlist, textonline;
 	int screenW;
 	float predree = 0.0f;
-
+	private boolean run = false;
 	int current = 0;
 	ScaleAnimation scaleAnimation;
 
@@ -80,21 +79,24 @@ public class Index extends ActivityGroup {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+
+		// 获取屏幕信息
 		s = new ScreenInfo(Index.this);
 		screenW = s.getWidth();
+		// 设置pagerviewer
 		viewPager = (ViewPager) findViewById(R.id.vPager);
-		RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) viewPager
-				.getLayoutParams();
-		layoutParams.height = s.getHeight() * 2 / 5;
+		RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) viewPager.getLayoutParams();
+		layoutParams.height = (int) (s.getHeight() * 3.8 / 5);
 		viewPager.setLayoutParams(layoutParams);
+
 		close = new Close();
 		IntentFilter filter22 = new IntentFilter("com.sleep.close");
 		this.registerReceiver(close, filter22);
 		toTime = new ToTime();
 
 		findviews();
-		RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) tcursor
-				.getLayoutParams();
+
+		RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) tcursor.getLayoutParams();
 		params.width = screenW / 4;
 		tcursor.setLayoutParams(params);
 		Button titles[] = { textmusic, textsinger, textlist, textonline };
@@ -141,18 +143,16 @@ public class Index extends ActivityGroup {
 
 	void InItView() {
 		pageViews = new ArrayList<View>();
-		View view01 = getLocalActivityManager().startActivity("activity01",
-				new Intent(this, com.example.musiclist.IMainActivity.class))
+		View view01 = getLocalActivityManager()
+				.startActivity("activity01", new Intent(this, com.example.musiclist.IMainActivity.class))
 				.getDecorView();
-		View view02 = getLocalActivityManager().startActivity("activity02",
-				new Intent(this, com.example.musiclist.ArtistsActivity.class))
+		View view02 = getLocalActivityManager()
+				.startActivity("activity02", new Intent(this, com.example.musiclist.ArtistsActivity.class))
 				.getDecorView();
-		View view03 = getLocalActivityManager().startActivity("activity03",
-				new Intent(this, com.example.musiclist.List.class))
-				.getDecorView();
-		View view04 = getLocalActivityManager().startActivity("activity04",
-				new Intent(this, com.example.musiclist.Online.class))
-				.getDecorView();
+		View view03 = getLocalActivityManager()
+				.startActivity("activity03", new Intent(this, com.example.musiclist.List.class)).getDecorView();
+		View view04 = getLocalActivityManager()
+				.startActivity("activity04", new Intent(this, com.example.musiclist.Online.class)).getDecorView();
 		pageViews.add(view01);
 		pageViews.add(view02);
 		pageViews.add(view03);
@@ -165,16 +165,13 @@ public class Index extends ActivityGroup {
 			ContentResolver contentResolver = this.getContentResolver();
 			Bitmap bitmap = null;
 			try {
-				bitmap = BitmapFactory.decodeStream(contentResolver
-						.openInputStream(uri));
+				bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(uri));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (OutOfMemoryError e) {
 				e.printStackTrace();
-				mainindexback
-						.setBackgroundResource(R.drawable.video_stub_small);
-				Toast.makeText(getApplicationContext(), "抱歉，内存不足设置失败！", 1)
-						.show();
+				mainindexback.setBackgroundResource(R.drawable.video_stub_small);
+				Toast.makeText(getApplicationContext(), "抱歉，内存不足设置失败！", 1).show();
 			}
 			mainindexback.setImageBitmap(bitmap);
 			mainindexback.setVisibility(View.VISIBLE);
@@ -188,8 +185,7 @@ public class Index extends ActivityGroup {
 		mainindexback = (ImageView) this.findViewById(R.id.mainindexbac);
 		tcursor = (ImageView) this.findViewById(R.id.tcursor);
 		musicname_main = (TextView) this.findViewById(R.id.musicname_main);
-		relative_main = (RelativeLayout) this
-				.findViewById(R.id.relative_mainindex);
+		relative_main = (RelativeLayout) this.findViewById(R.id.relative_mainindex);
 		main_singer = (TextView) this.findViewById(R.id.main_singer);
 		textmusic = (Button) this.findViewById(R.id.textmusic);
 		textsinger = (Button) this.findViewById(R.id.textsinger);
@@ -244,8 +240,7 @@ public class Index extends ActivityGroup {
 		} else {
 			play_main.setBackgroundResource(R.drawable.play1);
 			if (MusicService.player == null) {
-				int a = Integer.valueOf(localSharedPreferences.getInt(
-						"currentId", 0));
+				int a = Integer.valueOf(localSharedPreferences.getInt("currentId", 0));
 				try {
 					Music mm = lists.get(a);
 					musicname_main.setText(mm.getTitle());
@@ -280,12 +275,12 @@ public class Index extends ActivityGroup {
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			finish();
+			// 主页面play按钮按下
 			play_main.setBackgroundResource(R.drawable.play1);
 		}
 	}
 
 	private long count = 0;
-	private boolean run = false;
 
 	private Handler handler = new Handler();
 
@@ -311,10 +306,8 @@ public class Index extends ActivityGroup {
 					@Override
 					public void onPageScrolled(int arg0, float arg1, int arg2) {
 						if (arg1 != 0) {
-							TranslateAnimation animation = new TranslateAnimation(
-									predree * screenW / 4 + current, arg1
-											* screenW / 4 + arg0 * screenW / 4,
-									0, 0);
+							TranslateAnimation animation = new TranslateAnimation(predree * screenW / 4 + current,
+									arg1 * screenW / 4 + arg0 * screenW / 4, 0, 0);
 							animation.setDuration(200);
 							animation.setFillAfter(true);
 
@@ -351,8 +344,7 @@ public class Index extends ActivityGroup {
 				startActivity(intent3);
 			} else if (v == play_main) {
 				if (lists.size() > 0) {
-					if (MusicService.player != null
-							&& MusicService.player.isPlaying()) {
+					if (MusicService.player != null && MusicService.player.isPlaying()) {
 						play_main.setBackgroundResource(R.drawable.play1);
 					} else {
 						play_main.setBackgroundResource(R.drawable.pause1);
@@ -364,8 +356,7 @@ public class Index extends ActivityGroup {
 					MusicNum.putisok(true);
 					startService(intents);
 				} else {
-					Toast.makeText(getApplicationContext(), "您的播放列表为空", 1)
-							.show();
+					Toast.makeText(getApplicationContext(), "您的播放列表为空", 1).show();
 				}
 			}
 		}
@@ -382,6 +373,36 @@ public class Index extends ActivityGroup {
 				}
 			}
 		}
+	}
+
+	class myPagerView extends PagerAdapter {
+		// 显示数目
+		@Override
+		public int getCount() {
+			return pageViews.size();
+		}
+
+		@Override
+		public boolean isViewFromObject(View arg0, Object arg1) {
+			return arg0 == arg1;
+		}
+
+		@Override
+		public int getItemPosition(Object object) {
+			return super.getItemPosition(object);
+		}
+
+		@Override
+		public void destroyItem(View arg0, int arg1, Object arg2) {
+			((ViewPager) arg0).removeView(pageViews.get(arg1));
+		}
+
+		@Override
+		public Object instantiateItem(View arg0, int arg1) {
+			((ViewPager) arg0).addView(pageViews.get(arg1));
+			return pageViews.get(arg1);
+		}
+
 	}
 
 	@Override
@@ -423,8 +444,7 @@ public class Index extends ActivityGroup {
 					Toast.makeText(getApplicationContext(), "删除成功！", 1).show();
 				}
 			} else {
-				Toast.makeText(getApplicationContext(), "抱歉,当前没有歌曲在播放！", 1)
-						.show();
+				Toast.makeText(getApplicationContext(), "抱歉,当前没有歌曲在播放！", 1).show();
 			}
 		}
 		if (item.getItemId() == R.id.entersleep) {
@@ -447,12 +467,10 @@ public class Index extends ActivityGroup {
 					Music m = lists.get(MusicService._id);
 					String path = m.getUrl();
 					setMyRingtone(path);
-					Toast.makeText(getApplicationContext(), "设置铃声成功！", 1)
-							.show();
+					Toast.makeText(getApplicationContext(), "设置铃声成功！", 1).show();
 				} catch (Exception e) {
 					e.printStackTrace();
-					Toast.makeText(getApplicationContext(), "设置铃声失败！", 1)
-							.show();
+					Toast.makeText(getApplicationContext(), "设置铃声失败！", 1).show();
 				}
 			}
 		}
@@ -468,41 +486,9 @@ public class Index extends ActivityGroup {
 		values.put(MediaStore.Audio.Media.IS_NOTIFICATION, false);
 		values.put(MediaStore.Audio.Media.IS_ALARM, false);
 		values.put(MediaStore.Audio.Media.IS_MUSIC, false);
-		Uri uri = MediaStore.Audio.Media.getContentUriForPath(file
-				.getAbsolutePath());
+		Uri uri = MediaStore.Audio.Media.getContentUriForPath(file.getAbsolutePath());
 		Uri newUri = this.getContentResolver().insert(uri, values);
-		RingtoneManager.setActualDefaultRingtoneUri(this,
-				RingtoneManager.TYPE_RINGTONE, newUri);
-	}
-
-	class myPagerView extends PagerAdapter {
-		// 显示数目
-		@Override
-		public int getCount() {
-			return pageViews.size();
-		}
-
-		@Override
-		public boolean isViewFromObject(View arg0, Object arg1) {
-			return arg0 == arg1;
-		}
-
-		@Override
-		public int getItemPosition(Object object) {
-			return super.getItemPosition(object);
-		}
-
-		@Override
-		public void destroyItem(View arg0, int arg1, Object arg2) {
-			((ViewPager) arg0).removeView(pageViews.get(arg1));
-		}
-
-		@Override
-		public Object instantiateItem(View arg0, int arg1) {
-			((ViewPager) arg0).addView(pageViews.get(arg1));
-			return pageViews.get(arg1);
-		}
-
+		RingtoneManager.setActualDefaultRingtoneUri(this, RingtoneManager.TYPE_RINGTONE, newUri);
 	}
 
 	// int startY = 0;
